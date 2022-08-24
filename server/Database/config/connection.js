@@ -1,17 +1,34 @@
-const { Pool } = require('pg');
+const {Pool} = require('pg');
 require('env2')('.env');
 
-const { DB_URL } = process.env;
+const {
+  DEV_DB_URL, TEST_DB_URL, DATABASE_URL, NODE_ENV,
+} = process.env;
 
-console.log("url is " + DB_URL);
+let DB_URL = '';
 
-if (!DB_URL) {
-    throw new Error('There is a wrong in url');
+switch (NODE_ENV) {
+  case 'production':
+    DB_URL = DATABASE_URL;
+    break;
+  case 'development':
+    DB_URL = DEV_DB_URL;
+    break;
+  case 'test':
+    DB_URL = TEST_DB_URL;
+    break;
+  default:
+    throw new Error('No Database Found');
 }
 
 const connection = new Pool({
-    connectionString: DB_URL,
-    ssl: false,
+  connectionString: DB_URL,
+  ssl:
+      NODE_ENV === 'production' ?
+        {
+          rejectUnauthorized: false,
+        } :
+        false,
 });
 
 module.exports = connection;
