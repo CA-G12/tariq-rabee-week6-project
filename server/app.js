@@ -2,8 +2,9 @@ const express = require('express');
 const helmet = require('helmet');
 const compression = require('compression');
 const path = require('path');
-const app = express();
 const router = require('./router');
+
+const app = express();
 
 app.set('port', process.env.PORT || 4000);
 

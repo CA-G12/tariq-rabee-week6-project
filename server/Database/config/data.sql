@@ -10,7 +10,7 @@ CREATE TABLE customers (
 
 CREATE TABLE meals (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(40) NOT NULL,
+    mealName VARCHAR(40) NOT NULL,
     image_url  VARCHAR(255),
     price INT NOT NULL
 );
