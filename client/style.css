@@ -1,0 +1,20 @@
+* {
+    background-color: #001F1D;
+    color: white;
+}
+
+button {
+    background-color: #30807a;
+    height: 40px;
+    margin: 1.7rem;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+h1{
+    display: flex;
+
+}
