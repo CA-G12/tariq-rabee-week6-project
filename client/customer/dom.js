@@ -13,15 +13,15 @@ fetch('/allcustomers')
 
 function createItems(data) {
     data.forEach((ele) => {
-        const custom = document.createElement('div');
+        const custom = document.createElement('section');
         custom.classList = 'custName';
         const name = document.createElement('h3');
         name.textContent = ele.fullname;
         list.appendChild(custom);
         custom.appendChild(name);
         const viewBtn = document.createElement('button');
-        viewBtn.addEventListener('click', () => {
-            fetch(`/spiceficOrders:${ele.fullname}`)
+        viewBtn.addEventListener('click', (e) => {
+            fetch(`/MealByCustomer:${ele.fullname}`)
                 .then((res) => res.json())
                 .then((data) => {
                     showorders(data.rows);
@@ -34,12 +34,10 @@ function createItems(data) {
         custom.appendChild(viewBtn);
     });
 };
-
 function showorders(orders) {
     const list2 = document.querySelector('.custName');
     if (list2.lastChild.nodeName != 'BUTTON')
         list2.removeChild(list2.lastChild);
-
     const order = document.createElement('div');
     list2.appendChild(order);
     orders.forEach((ele) => {
@@ -48,4 +46,3 @@ function showorders(orders) {
         mName.textContent = ele.mealname;
     });
 };
-
