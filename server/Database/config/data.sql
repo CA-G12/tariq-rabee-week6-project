@@ -34,4 +34,13 @@ Insert INTO customers (fullName, phone, city) VALUES ('kenaan', '+0527324934', '
         ('salah', '+4786342348', 'alquds'),
         ('hatem', '+81624986324', 'nazareth')
 ;
+
+Insert INTO orders (customer_id, meal_id, date) VALUES (1, 3, '6-5-2021'),
+        (1, 2, '24-3-2022'),
+        (3, 1, '07-08-2022'),
+        (2, 2, '24-3-2022'),
+        (1, 2, '10-3-2022'),
+        (2, 1, '07-08-2022'),
+        (2, 3, '24-3-2022')
+;
 COMMIT;

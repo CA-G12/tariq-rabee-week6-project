@@ -4,7 +4,8 @@ const controller = require('./Controllers');
 
 const router = Router();
 
-router.get('/allcustomer', controller.getAllCustomer);
+router.get('/allcustomers', controller.getAllCustomer);
 router.get('/allmeals', controller.getAllMeals);
-
+router.get('/spiceficOrders:fullname', controller.getSpecificOrders)
+ 
 module.exports = router;
