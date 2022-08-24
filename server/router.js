@@ -1,6 +1,10 @@
+const { Router } = require('express');
 const express = require('express');
-const customers = require('./Controllers/customers');
+const controller = require('./Controllers');
 
-const router = express();
+const router = Router();
 
-router.get('/allcustomer', customers.gaetAllCustomer);
+router.get('/allcustomer', controller.getAllCustomer);
+router.get('/allmeals', controller.getAllMeals);
+
+module.exports = router;
