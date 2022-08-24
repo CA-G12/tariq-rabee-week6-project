@@ -1,0 +1,20 @@
+body{
+    background-color: #001F1D;
+}
+nav {
+    background-color: #094C51;
+    padding-left: 0.8rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+nav a {
+    padding-top: 1.6rem;
+    padding-right: 1.2rem;
+    color: white;
+}
+
+.logo{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
