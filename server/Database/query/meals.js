@@ -19,5 +19,4 @@ const meals = {
   [id, mealName, imageUrl, price]),
 };
 
-
 module.exports = meals;

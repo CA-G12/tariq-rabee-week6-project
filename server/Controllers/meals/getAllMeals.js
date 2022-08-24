@@ -1,9 +1,14 @@
 const query = require('../../Database/query');
 
 const getAllMeals = (req, res) => {
-  query.meals.getAll().then((data) => {
+  return query.meals.getAll()
+  .then((data) => {
+    res.json(data);
     console.log(data.rows);
-    res.end();
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json( {msg: 'internal server Error'});
   });
   
 };
