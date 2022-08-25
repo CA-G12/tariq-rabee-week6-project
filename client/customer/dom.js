@@ -39,10 +39,12 @@ function showorders(orders) {
     if (list2.lastChild.nodeName != 'BUTTON')
         list2.removeChild(list2.lastChild);
     const order = document.createElement('div');
-    list2.appendChild(order);
+    list.appendChild(order);
     orders.forEach((ele) => {
         mName = document.createElement('h4');
+        hr = document.createElement('hr')
         order.appendChild(mName);
+        order.appendChild(hr)
         mName.textContent = ele.mealname;
     });
 };
