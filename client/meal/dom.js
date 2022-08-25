@@ -18,9 +18,12 @@ function createItems(data) {
         const meal = document.createElement('div');
         meal.classList = 'mealInfo';
         const name = document.createElement('h3');
-        name.textContent = ele.mealname;
+        const figure = document.createElement('img');
         list.appendChild(meal);
         meal.appendChild(name);
+        meal.appendChild(figure);
+        figure.src = 'https://www.annisarestaurant.com/wp-content/uploads/2022/08/how-long-is-pizza-good-for-in-the-fridge-1.jpg';
+        name.textContent = ele.mealname;
         const viewBtn = document.createElement('button');
         viewBtn.addEventListener('click', () => {
             fetch(`/CustomerByMeal:${ele.mealname}`)
